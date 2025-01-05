@@ -1,12 +1,12 @@
 
 -- Comprobar si existe la base de datos y eliminarla si es necesario
-DROP DATABASE IF EXISTS bicitech;
+DROP DATABASE IF EXISTS deustoCar;
 
--- Crear la base de datos bicitech
-CREATE DATABASE bicitech;
+-- Crear la base de datos deustoCar
+CREATE DATABASE deustoCar;
 
--- Usar la base de datos bicitech
-USE bicitech;
+-- Usar la base de datos deustoCar
+USE deustoCar;
 
 -- Comprobar si existe la tabla user y eliminarla si es necesario
 DROP TABLE IF EXISTS user;
@@ -19,12 +19,12 @@ CREATE TABLE user (
     password VARCHAR(100) NOT NULL
 );
 
--- Comprobar si existe la tabla favoriteRoads y eliminarla si es necesario
-DROP TABLE IF EXISTS favoriteRoads;
+-- Comprobar si existe la tabla favoriteCars y eliminarla si es necesario
+DROP TABLE IF EXISTS favoriteCars;
 
--- Crear la tabla favoriteRoads
-CREATE TABLE favoriteRoads (
+-- Crear la tabla favoriteCars
+CREATE TABLE favoriteCars (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username VARCHAR(45) NOT NULL,
-    roadID VARCHAR(45) NOT NULL
+    carID VARCHAR(45) NOT NULL
 );

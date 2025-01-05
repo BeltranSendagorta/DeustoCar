@@ -61,7 +61,7 @@ app.get('/coches/getAll', async (req, res) => {
     }
 });
 
-app.get('/coche/matricula/:matricula', async (req, res) => {
+app.get('/coches/matricula/:matricula', async (req, res) => {
     try {
         const coche = await Coche.findOne({ id: req.params.matricula });
         if (!coche) {
@@ -73,7 +73,7 @@ app.get('/coche/matricula/:matricula', async (req, res) => {
     }
 });
 
-app.get('/coche/marca/:marca', async (req, res) => {
+app.get('/coches/marca/:marca', async (req, res) => {
     try {
         const coche = await Coche.find({ velocidad_max: { $lt: req.params.marca } });
         res.json(coche);
@@ -82,7 +82,7 @@ app.get('/coche/marca/:marca', async (req, res) => {
     }
 });
 
-app.get('/coche/modelo/:modelo', async (req, res) => {
+app.get('/coches/modelo/:modelo', async (req, res) => {
     try {
         const coche = await Coche.find({ velocidad_max: { $lt: req.params.modelo } });
         res.json(coche);
@@ -91,7 +91,7 @@ app.get('/coche/modelo/:modelo', async (req, res) => {
     }
 });
 
-app.get('/coche/precio/:precio', async (req, res) => {
+app.get('/coches/precio/:precio', async (req, res) => {
     try {
         const coche = await Coche.find({ velocidad_max: { $lt: req.params.precio } });
         res.json(coche);
