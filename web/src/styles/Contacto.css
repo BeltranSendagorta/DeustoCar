@@ -68,7 +68,7 @@ form label {
   display: block;
   margin: 0.5rem 0 0.2rem;
   font-weight: bold;
-  text-align: left; /* Alinea los títulos a la izquierda */
+  text-align: left;
 }
 
 form input,
