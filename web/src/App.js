@@ -1,30 +1,70 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+
+// Componentes
 import Auth from './components/auth/Auth';
 import Register from './components/auth/Register';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './components/cars/Home';
+import Stock from './components/cars/Stock';
+import Contacto from './components/cars/Contacto';
+import Header from './components/header/Header'; // Header global
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Layout que incluye Header
+const LayoutWithHeader = ({ children }) => (
+  <>
+    <Header />
+    {children}
+  </>
+);
 
 function App() {
-  const [isAuthenticated, setIsAuthentificated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Función para manejar la autenticación exitosa
   const handleLogin = () => {
-    setIsAuthentificated(true);
-   
-    console.log("AUTHENTIFICATED:",isAuthenticated);
+    setIsAuthenticated(true);
+    console.log("AUTHENTICATED:", isAuthenticated);
   };
+
   return (
     <Router>
       <div className="App">
-        {/* Usar el componente Header */}
-        {/*isAuthenticated && <Header />*/}
-
-        {/* Usar el componente Routes */}
         <Routes>
+          {/* Página de inicio de sesión (sin Header) */}
           <Route path="/" element={<Auth onLogin={handleLogin} />} />
-          <Route path="/register" element={<Register/>} />
-         
+
+          {/* Página de registro (sin Header) */}
+          <Route path="/register" element={<Register />} />
+
+          {/* Páginas con Header */}
+          <Route
+            path="/home"
+            element={
+              <LayoutWithHeader>
+                <Home />
+              </LayoutWithHeader>
+            }
+          />
+          <Route
+            path="/stock"
+            element={
+              <LayoutWithHeader>
+                <Stock />
+              </LayoutWithHeader>
+            }
+          />
+          <Route
+            path="/contacto"
+            element={
+              <LayoutWithHeader>
+                <Contacto />
+              </LayoutWithHeader>
+            }
+          />
+
+          {/* Ruta por defecto */}
+          <Route path="*" element={<Auth />} />
         </Routes>
       </div>
     </Router>
