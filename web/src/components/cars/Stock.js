@@ -42,6 +42,7 @@ const Stock = () => {
           <p>Cargando vehículos...</p> 
         )}
       </div>
+     
     </div>
   );
 };

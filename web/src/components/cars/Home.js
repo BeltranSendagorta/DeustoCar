@@ -40,9 +40,7 @@ const Home = () => {
         </section>
       </main>
 
-      <footer>
-        <p>&copy; 2024 DeustoCar. Todos los derechos reservados.</p>
-      </footer>
+     
     </div>
   );
 };
