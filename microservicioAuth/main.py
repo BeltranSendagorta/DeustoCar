@@ -65,7 +65,7 @@ def create_jwt_token(data: dict):
     return token
 
 # Ruta para generar el token JWT
-@app.post("/auth/token")
+@app.post("/auth/login")
 async def generate_token(form_data: OAuth2PasswordRequestForm = Depends()):
     cursor = db.cursor()
     

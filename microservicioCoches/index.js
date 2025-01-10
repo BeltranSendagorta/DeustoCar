@@ -53,7 +53,7 @@ app.get('/subirDatos', async (req, res) => {
 
 app.get('/coches/getAll', async (req, res) => {
     try {
-        const coche = await Coche.find();
+        const coches = await Coche.find();
         console.log(coches.length + ' elements retrieved successfully');
         res.json(coches);
     } catch (error) {
@@ -63,7 +63,7 @@ app.get('/coches/getAll', async (req, res) => {
 
 app.get('/coches/matricula/:matricula', async (req, res) => {
     try {
-        const coche = await Coche.findOne({ id: req.params.matricula });
+        const coche = await Coche.findOne({ matricula: req.params.matricula });
         if (!coche) {
             return res.status(404).json({ error: "No se ha encontrado ningun coche" });
         }

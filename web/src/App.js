@@ -7,9 +7,11 @@ import Register from './components/auth/Register';
 import Home from './components/cars/Home';
 import Stock from './components/cars/Stock';
 import Contacto from './components/cars/Contacto';
-import Header from './components/header/Header'; // Header global
+import Header from './components/header/Header';
+import Coche from './components/cars/Coche';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 // Layout que incluye Header
 const LayoutWithHeader = ({ children }) => (
@@ -62,6 +64,16 @@ function App() {
               </LayoutWithHeader>
             }
           />
+
+         <Route
+            path="/coches/:cocheId"
+            element={
+              <LayoutWithHeader>
+                <Coche />
+              </LayoutWithHeader>
+            }
+          />
+
 
           {/* Ruta por defecto */}
           <Route path="*" element={<Auth />} />

@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
-    event.preventDefault(); // Evita la recarga de la página
+    event.preventDefault(); 
     try {
       const userCredentials = {
         username: username,
@@ -16,15 +16,16 @@ const Login = () => {
       };
       
       console.log('Datos de login enviados:', userCredentials);
-      const response = await axios.post('/api/auth/login', userCredentials);
+      const response = await axios.post('/api/auth/login', userCredentials,{
+        headers:{'Content-Type': 'application/x-www-form-urlencoded',}
+      });
 
-      // Si el backend responde con status 200, redirigimos a /home
+
       if (response.status === 200) {
         navigate('/home');
       }
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
-      // Maneja el error según tu aplicación (por ejemplo, mostrar notificación)
     }
   };
 
