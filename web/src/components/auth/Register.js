@@ -10,7 +10,7 @@ const Register = () => {
     const navigate = useNavigate();
 
     const register = async (event) => {
-        event.preventDefault(); // Evita que el formulario recargue la página
+        event.preventDefault(); 
         try {
             const user = {
                 name: name,
@@ -22,9 +22,9 @@ const Register = () => {
             const response = await axios.post('/api/auth/register', user);
             console.log(response);
 
-            // Si el backend responde con status 200 significa que el usuario se registró correctamente
+           
             if (response.status === 200) {
-                // Redirige a la ventana de inicio de sesión (ajusta la ruta a la de tu login)
+               
                 navigate('/auth');
             }
         } catch (error) {
@@ -35,7 +35,6 @@ const Register = () => {
     return (
         <div className="auth-box" id="registro">
             <h2>Registro</h2>
-            {/* El formulario ejecuta "register" al hacer submit */}
             <form onSubmit={register}>
                 <input
                     type="text"

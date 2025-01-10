@@ -8,10 +8,6 @@ const Home = () => {
       <Header />
 
       <main>
-        <section id="hero">
-          <h2>Tu mejor opción en vehículos</h2>
-          <p>Encuentra el coche de tus sueños con nosotros.</p>
-        </section>
 
         <section id="historia">
           <h3>Nuestra Historia</h3>
