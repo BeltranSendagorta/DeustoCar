@@ -1,0 +1,21 @@
+/* Icono de favorito */
+.favorite-icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.heart-icon {
+    font-size: 1.5em;
+    color: #ccc; /* Color por defecto */
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.heart-icon.filled {
+    color: #e63946; /* Color rojo para favoritos */
+}
+
+.heart-icon:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el ratón */
+}
